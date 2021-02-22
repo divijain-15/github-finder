@@ -39,8 +39,8 @@ const searchUsers = async(text)=>{
   // get single github user
   const getUser = async (username)=>{
     setLoading();
-    const res = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.GITHUB_CLIENT_ID}
-    &client_secret=${process.env.GITHUB_SECRET}`);
+    const res = await axios.get(`https://api.github.com/users/${username}?client_id=62fef7b215581e6ba4ae
+    &client_secret=0e8d1a855b04a0531e9ac7bd0e92217b808c0091`);
     dispatch({
       type:GET_USER,
       payload:res.data

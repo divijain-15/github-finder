@@ -1,12 +1,10 @@
-import React, {  Fragment,useState} from 'react'
+import React from 'react'
 import Navbar from "./components/Navbar";
 import "./App.css";
 import Home from "./components/home";
 import Alert from "./components/Alert";
-import Users from "./components/Users";
 import About from "./components/About";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import Search from "./components/Search";
 import User from "./components/User";
 import NotFound from "./components/NotFound";
 import AlertState from './context/alert/AlertState';
@@ -26,9 +24,12 @@ const App = () => {
        <Alert/>
        <Switch>
          <Route exact path = "/"component={Home}/>
-         <Route component={NotFound}/>
          <Route path = "/about"render={About}/>
          <Route exact path="/user/:login" component={User}/>
+         <Route component={NotFound}/>
+        
+         
+       
        </Switch>
        
      </div>

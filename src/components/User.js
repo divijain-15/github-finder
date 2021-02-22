@@ -1,7 +1,6 @@
-import React, { Component, Fragment,useEffect,useContext } from 'react'
+import React, {  Fragment,useEffect,useContext } from 'react'
 import {Link} from "react-router-dom";
 import Repos from "./Repos";
-import Users from './Users';
 import GithubContext from "../context/github/githubContext";
 import Spinner from './Spinner';
 
@@ -17,13 +16,14 @@ const User = ({match}) => {
     useEffect(()=>{
         getUser(match.params.login);
         getUserRepos(match.params.login);
-
-    })
+        // eslint-disable-next-line
+  },[]);
     
 
         const {name,avatar_url,company,location,bio,blog,login,html_url,followers,following,public_repos,public_gists,hireable} = user;
 
-        if(loading)return <Spinner/>
+        if(loading)return <Spinner/>;
+
         return ( 
            <Fragment>
                <Link to="/" className="btn btn-light">Back To Search</Link>
